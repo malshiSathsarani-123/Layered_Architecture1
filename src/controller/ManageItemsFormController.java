@@ -2,9 +2,8 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import dao.CustomerDAOImpl;
+import dao.ItemDAO;
 import dao.ItemDAOImpl;
-import db.DBConnection;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,8 +22,13 @@ import view.tdm.ItemTM;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+/**
+ * @author : Sanu Vithanage
+ * @since : 0.1.0
+ **/
 
 public class ManageItemsFormController {
     public AnchorPane root;
@@ -36,6 +40,8 @@ public class ManageItemsFormController {
     public TableView<ItemTM> tblItems;
     public JFXTextField txtUnitPrice;
     public JFXButton btnAddNewItem;
+
+    ItemDAO itemDAO = new ItemDAOImpl();
 
     public void initialize() {
         tblItems.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("code"));
@@ -71,17 +77,9 @@ public class ManageItemsFormController {
         tblItems.getItems().clear();
         try {
             /*Get all items*/
-
-            ItemDAOImpl itemDAOImpl = new ItemDAOImpl();
-            ArrayList <ItemDTO> itemDTOS = itemDAOImpl.loadAllItems();
-
-            for (ItemDTO itemDTO : itemDTOS){
-                tblItems.getItems().add(new ItemTM(
-                        itemDTO.getCode(),
-                        itemDTO.getDescription(),
-                        itemDTO.getUnitPrice(),
-                        itemDTO.getQtyOnHand()
-                ));
+            ArrayList<ItemDTO> allItems = itemDAO.getAllItems();
+            for (ItemDTO i : allItems) {
+                tblItems.getItems().add(new ItemTM(i.getCode(), i.getDescription(), i.getUnitPrice(), i.getQtyOnHand()));
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -139,8 +137,8 @@ public class ManageItemsFormController {
                 new Alert(Alert.AlertType.ERROR, "There is no such item associated with the id " + code).show();
             }
 
-            ItemDAOImpl itemDAOImpl = new ItemDAOImpl();
-            boolean isDelete = itemDAOImpl.delete(code);
+            //Delete Customer
+            itemDAO.deleteItem(code);
 
             tblItems.getItems().remove(tblItems.getSelectionModel().getSelectedItem());
             tblItems.getSelectionModel().clearSelection();
@@ -180,9 +178,8 @@ public class ManageItemsFormController {
                     new Alert(Alert.AlertType.ERROR, code + " already exists").show();
                 }
                 //Save Item
-                ItemDTO itemDTO = new ItemDTO(code,description,unitPrice,qtyOnHand);
-                ItemDAOImpl itemDAO = new ItemDAOImpl();
-                boolean isSave = itemDAO.save(itemDTO);
+                itemDAO.saveItem(new ItemDTO(code, description, unitPrice, qtyOnHand));
+
                 tblItems.getItems().add(new ItemTM(code, description, unitPrice, qtyOnHand));
 
             } catch (SQLException e) {
@@ -197,11 +194,7 @@ public class ManageItemsFormController {
                     new Alert(Alert.AlertType.ERROR, "There is no such item associated with the id " + code).show();
                 }
                 /*Update Item*/
-
-                ItemDTO itemDTO = new ItemDTO(code,description,unitPrice,qtyOnHand);
-
-                ItemDAOImpl itemDAO = new ItemDAOImpl();
-                boolean isUpdate = itemDAO.update(itemDTO);
+                itemDAO.updateItem(new ItemDTO(code, description, unitPrice, qtyOnHand));
 
                 ItemTM selectedItem = tblItems.getSelectionModel().getSelectedItem();
                 selectedItem.setDescription(description);
@@ -214,16 +207,24 @@ public class ManageItemsFormController {
                 e.printStackTrace();
             }
         }
+
         btnAddNewItem.fire();
     }
 
+
     private boolean existItem(String code) throws SQLException, ClassNotFoundException {
-        ItemDAOImpl itemDAO = new ItemDAOImpl();
-        return itemDAO.exit(code);
+        return itemDAO.existItem(code);
     }
 
+
     private String generateNewId() {
-        ItemDAOImpl itemDAO = new ItemDAOImpl();
-        return itemDAO.generateNewId();
+        try {
+            return itemDAO.generateNewCode();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return "I00-001";
     }
 }

@@ -5,19 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39eea0b4-d152-4ef5-a331-4501b7a9ed79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/CustomerDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ItemDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/OrderDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/OrderDetailDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/PlaceOrderDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/CustomerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/ItemDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/OrderDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/OrderDetailDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/OrderDetailsDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ManageCustomersFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageCustomersFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ManageItemsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageItemsFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PlaceOrderFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CustomerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ItemDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ItemDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/OrderDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/OrderDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/OrderDetailDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/PlaceOrderDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OrderDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OrderDetailDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +32,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2Q8NrH0vu05kCPitFao5Av52PLI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -48,7 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../1st semester/Final project 01/finalProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -83,6 +88,7 @@
       <workItem from="1684841294031" duration="6211000" />
       <workItem from="1684896459288" duration="341000" />
       <workItem from="1684897643508" duration="2151000" />
+      <workItem from="1684899901363" duration="4670000" />
     </task>
     <servers />
   </component>

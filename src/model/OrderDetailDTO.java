@@ -13,7 +13,7 @@ public class OrderDetailDTO implements Serializable {
     private int qty;
     private BigDecimal unitPrice;
 
-    public OrderDetailDTO() {
+    public OrderDetailDTO(String orderId, String code, int qty, BigDecimal unitPrice) {
     }
 
     public OrderDetailDTO(String itemCode, int qty, BigDecimal unitPrice) {
@@ -53,5 +53,9 @@ public class OrderDetailDTO implements Serializable {
                 ", qty=" + qty +
                 ", unitPrice=" + unitPrice +
                 '}';
+    }
+
+    public String getOid() {
+        return null;
     }
 }
