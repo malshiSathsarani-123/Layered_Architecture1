@@ -1,4 +1,4 @@
-package dao;
+package dao.custom;
 
 import model.CustomerDTO;
 import model.ItemDTO;
