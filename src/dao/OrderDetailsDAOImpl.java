@@ -6,7 +6,7 @@ import model.OrderDetailDTO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class OrderDetailsDAOImpl implements CrudDAO<OrderDetailDTO,String>{
+public class OrderDetailsDAOImpl implements OrderDetailDAO{
 
     @Override
     public boolean add(OrderDetailDTO dto) throws SQLException, ClassNotFoundException {

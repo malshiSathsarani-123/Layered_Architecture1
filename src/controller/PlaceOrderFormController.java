@@ -57,10 +57,10 @@ public class PlaceOrderFormController {
     public Label lblTotal;
     private String orderId;
 
-    CrudDAO<CustomerDTO,String> crudDAOCustomer = new CustomerDAOImpl();
-    CrudDAO<ItemDTO,String> crudDAOItem = new ItemDAOImpl();
-    CrudDAO<OrderDTO,String> crudDAOOrder = new OrderDAOImpl();
-    CrudDAO<OrderDetailDTO,String> crudDAOOrderDetailsDAO = new OrderDetailsDAOImpl();
+    CustomerDAO customerDAO = new CustomerDAOImpl();
+    ItemDAO itemDAO = new ItemDAOImpl();
+    OrderDAO crudDAOOrder = new OrderDAOImpl();
+    OrderDetailDAO orderDetailDAO = new OrderDetailsDAOImpl();
 
     public void initialize() throws SQLException, ClassNotFoundException {
 
@@ -110,7 +110,7 @@ public class PlaceOrderFormController {
                             new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + newValue + "").show();
                         }
                         //Search Customer
-                        CustomerDTO customerDTO = crudDAOCustomer.search(newValue + "");
+                        CustomerDTO customerDTO = customerDAO.search(newValue + "");
                         txtCustomerName.setText(customerDTO.getName());
 
                     } catch (SQLException e) {
@@ -138,7 +138,7 @@ public class PlaceOrderFormController {
                     }
 
                     //Search Item
-                    ItemDTO item = crudDAOItem.search(newItemCode);
+                    ItemDTO item = itemDAO.search(newItemCode);
 
                     txtDescription.setText(item.getDescription());
                     txtUnitPrice.setText(item.getUnitPrice().setScale(2).toString());
@@ -183,11 +183,11 @@ public class PlaceOrderFormController {
     }
 
     private boolean existItem(String code) throws SQLException, ClassNotFoundException {
-        return crudDAOItem.exist(code);
+        return itemDAO.exist(code);
     }
 
     boolean existCustomer(String id) throws SQLException, ClassNotFoundException {
-        return crudDAOCustomer.exist(id);
+        return customerDAO.exist(id);
     }
 
     public String generateNewOrderId() {
@@ -203,7 +203,7 @@ public class PlaceOrderFormController {
 
     private void loadAllCustomerIds() {
         try {
-            ArrayList<CustomerDTO> allCustomers = crudDAOCustomer.getAll();
+            ArrayList<CustomerDTO> allCustomers = customerDAO.getAll();
             for (CustomerDTO c : allCustomers) {
                 cmbCustomerId.getItems().add(c.getId());
             }
@@ -217,7 +217,7 @@ public class PlaceOrderFormController {
     private void loadAllItemCodes() {
         try {
             /*Get all items*/
-            ArrayList<ItemDTO> allItems = crudDAOItem.getAll();
+            ArrayList<ItemDTO> allItems = itemDAO.getAll();
             for (ItemDTO i : allItems) {
                 cmbItemCode.getItems().add(i.getCode());
             }
@@ -340,7 +340,7 @@ public class PlaceOrderFormController {
             // add data to the Order Details table
 
             for (OrderDetailDTO detail : orderDetails) {
-                boolean b3 = crudDAOOrderDetailsDAO.add(detail);
+                boolean b3 = orderDetailDAO.add(detail);
                 if (!b3) {
                     connection.rollback();
                     connection.setAutoCommit(true);
@@ -353,7 +353,7 @@ public class PlaceOrderFormController {
 
                 //update item
 
-                boolean b = crudDAOItem.update(new ItemDTO(item.getCode(), item.getDescription(), item.getUnitPrice(), item.getQtyOnHand()));
+                boolean b = itemDAO.update(new ItemDTO(item.getCode(), item.getDescription(), item.getUnitPrice(), item.getQtyOnHand()));
 
                 if (!b) {
                     connection.rollback();
@@ -377,7 +377,7 @@ public class PlaceOrderFormController {
     public ItemDTO findItem(String code) {
         try {
 
-            return crudDAOItem.search(code);
+            return itemDAO.search(code);
 //
         } catch (SQLException e) {
             throw new RuntimeException("Failed to find the Item " + code, e);
