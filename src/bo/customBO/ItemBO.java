@@ -1,7 +1,5 @@
-package bo;
+package bo.customBO;
 
-import dao.custom.ItemDAO;
-import dao.custom.impl.ItemDAOImpl;
 import model.ItemDTO;
 
 import java.sql.SQLException;
