@@ -1,9 +1,6 @@
 package controller;
 
-import bo.customBO.CustomerBO;
-import bo.customBO.ItemBO;
-import bo.customBO.OrderBO;
-import bo.customBO.OrderDetailBO;
+import bo.customBO.*;
 import bo.customBO.impl.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -68,8 +65,7 @@ public class PlaceOrderFormController {
     OrderBO orderBO = new OrderBOImpl();
     CustomerBO customerBO = new CustomerBOImpl();
     ItemBO itemBO = new ItemBOImpl();
-    OrderDetailBO orderDetailBO = new OrderDetailBOImpl();
-
+    PurchaseOrderBO purchaseOrderBO = new PurchaseOrderBOImpl();
 
     public void initialize() throws SQLException, ClassNotFoundException {
 
@@ -323,7 +319,6 @@ public class PlaceOrderFormController {
 
     public boolean saveOrder(String orderId, LocalDate orderDate, String customerId, List<OrderDetailDTO> orderDetails) {
         /*Transaction*/
-        PurchaseOrderBOImpl purchaseOrderBO = new PurchaseOrderBOImpl();
         return purchaseOrderBO.saveOrder(orderId,orderDate,customerId,orderDetails);
     }
 }

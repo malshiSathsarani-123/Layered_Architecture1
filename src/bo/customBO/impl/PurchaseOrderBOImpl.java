@@ -1,9 +1,6 @@
 package bo.customBO.impl;
 
-import bo.customBO.CustomerBO;
-import bo.customBO.ItemBO;
-import bo.customBO.OrderBO;
-import bo.customBO.OrderDetailBO;
+import bo.customBO.*;
 import db.DBConnection;
 import model.ItemDTO;
 import model.OrderDTO;
@@ -14,7 +11,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
-public class PurchaseOrderBOImpl {
+public class PurchaseOrderBOImpl implements PurchaseOrderBO {
 
     OrderBO orderBO = new OrderBOImpl();
     ItemBO itemBO = new ItemBOImpl();
