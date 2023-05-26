@@ -5,6 +5,8 @@ import bo.customBO.impl.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import dao.custom.OrderDAO;
+import dao.custom.impl.OrderDAOImpl;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.event.ActionEvent;
@@ -62,7 +64,7 @@ public class PlaceOrderFormController {
 //    OrderDAO crudDAOOrder = new OrderDAOImpl();
 //    OrderDetailDAO orderDetailDAO = new OrderDetailsDAOImpl();
 
-    OrderBO orderBO = new OrderBOImpl();
+    OrderDAO orderDAO = new OrderDAOImpl();
     CustomerBO customerBO = new CustomerBOImpl();
     ItemBO itemBO = new ItemBOImpl();
     PurchaseOrderBO purchaseOrderBO = new PurchaseOrderBOImpl();
@@ -197,7 +199,7 @@ public class PlaceOrderFormController {
 
     public String generateNewOrderId() {
         try {
-            return orderBO.generateNewID();
+            return orderDAO.generateNewID();
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Failed to generate a new order id").show();
         } catch (ClassNotFoundException e) {

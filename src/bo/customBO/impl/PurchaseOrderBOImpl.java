@@ -1,6 +1,10 @@
 package bo.customBO.impl;
 
 import bo.customBO.*;
+import dao.custom.OrderDAO;
+import dao.custom.OrderDetailDAO;
+import dao.custom.impl.OrderDAOImpl;
+import dao.custom.impl.OrderDetailsDAOImpl;
 import db.DBConnection;
 import model.ItemDTO;
 import model.OrderDTO;
@@ -13,9 +17,9 @@ import java.util.List;
 
 public class PurchaseOrderBOImpl implements PurchaseOrderBO {
 
-    OrderBO orderBO = new OrderBOImpl();
+    OrderDAO orderDAO = new OrderDAOImpl();
     ItemBO itemBO = new ItemBOImpl();
-    OrderDetailBO orderDetailBO = new OrderDetailBOImpl();
+    OrderDetailDAO orderDetailDAO = new OrderDetailsDAOImpl();
 
     public boolean saveOrder(String orderId, LocalDate orderDate, String customerId, List<OrderDetailDTO> orderDetails) {
         /*Transaction*/
@@ -24,7 +28,7 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
             connection = DBConnection.getDbConnection().getConnection();
 
             //Check order id already exist or not
-            boolean b1 = orderBO.existOrder(orderId);
+            boolean b1 = orderDAO.exist(orderId);
             /*if order id already exist*/
             if (b1) {
                 return false;
@@ -33,7 +37,7 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
             connection.setAutoCommit(false);
 
             //Save the Order to the order table
-            boolean b2 = orderBO.addOrder(new OrderDTO(orderId, orderDate, customerId));
+            boolean b2 = orderDAO.add(new OrderDTO(orderId, orderDate, customerId));
 
             if (!b2) {
                 connection.rollback();
@@ -44,7 +48,7 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
             // add data to the Order Details table
 
             for (OrderDetailDTO detail : orderDetails) {
-                boolean b3 = orderDetailBO.add(detail);
+                boolean b3 = orderDetails.add(detail);
                 if (!b3) {
                     connection.rollback();
                     connection.setAutoCommit(true);
