@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39eea0b4-d152-4ef5-a331-4501b7a9ed79" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/bo/CustomerBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bo/CustomerBOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bo/ItemBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bo/ItemBOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ManageCustomersFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageCustomersFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ManageItemsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageItemsFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PlaceOrderFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/CrudDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/CrudDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/CustomerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/ItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ItemDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/ItemDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/OrderDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/OrderDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/OrderDetailDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/OrderDetailDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/OrderDetailsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/OrderDetailsDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/QueryDA0Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/QueryDA0Impl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +80,7 @@
       <workItem from="1684897643508" duration="2151000" />
       <workItem from="1684899901363" duration="10233000" />
       <workItem from="1684913158204" duration="9793000" />
-      <workItem from="1685069162179" duration="8214000" />
+      <workItem from="1685069162179" duration="13709000" />
     </task>
     <task id="LOCAL-00001" summary="Dependency Inject Successful.....">
       <created>1684904775752</created>
@@ -124,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685075897219</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="move to package completed...">
+      <created>1685077529682</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685077529682</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +149,7 @@
     <MESSAGE value="CrudDAO is successful....." />
     <MESSAGE value="CrudDAO extends for CustomerDAO,ItemDAO,OrderDAO and OrderDAO is Successful...." />
     <MESSAGE value="QueryDA0Impl and QueryDAO completed..." />
-    <option name="LAST_COMMIT_MESSAGE" value="QueryDA0Impl and QueryDAO completed..." />
+    <MESSAGE value="move to package completed..." />
+    <option name="LAST_COMMIT_MESSAGE" value="move to package completed..." />
   </component>
 </project>
