@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39eea0b4-d152-4ef5-a331-4501b7a9ed79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bo/SuperBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bo/BOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bo/SuperBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/SuperBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bo/customBO/CustomerBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/CustomerBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bo/customBO/ItemBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/ItemBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bo/customBO/PurchaseOrderBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/PurchaseOrderBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bo/customBO/impl/ItemBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/impl/ItemBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bo/customBO/impl/PurchaseOrderBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/impl/PurchaseOrderBOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +88,7 @@
       <workItem from="1685069162179" duration="13842000" />
       <workItem from="1685085729686" duration="11446000" />
       <workItem from="1685160942060" duration="117000" />
-      <workItem from="1685418340542" duration="5570000" />
+      <workItem from="1685418340542" duration="5901000" />
     </task>
     <task id="LOCAL-00001" summary="Dependency Inject Successful.....">
       <created>1684904775752</created>
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685425857044</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="DAOFactory is completed...">
+      <created>1685426843200</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685426843200</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

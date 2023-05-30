@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.customBO.CustomerBO;
 import bo.customBO.impl.CustomerBOImpl;
 import com.jfoenix.controls.JFXButton;
@@ -42,7 +43,9 @@ public class ManageCustomersFormController {
     public JFXButton btnAddNewCustomer;
 
 //    CustomerDAO customerDAO = new CustomerDAOImpl();
-    CustomerBO customerBO = new CustomerBOImpl();
+//    CustomerBO customerBO = new CustomerBOImpl();
+
+    CustomerBO customerBO  = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
     public void initialize() {
         tblCustomers.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
