@@ -1,7 +1,5 @@
 package bo.customBO;
 
-import dao.custom.OrderDAO;
-import dao.custom.impl.OrderDAOImpl;
 import model.CustomerDTO;
 import model.ItemDTO;
 import model.OrderDetailDTO;
