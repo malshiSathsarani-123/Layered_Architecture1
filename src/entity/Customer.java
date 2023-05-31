@@ -1,4 +1,4 @@
-package model;
+package entity;
 
 import java.io.Serializable;
 
@@ -7,15 +7,15 @@ import java.io.Serializable;
  * @since : 0.1.0
  **/
 
-public class CustomerDTO implements Serializable {
+public class Customer implements Serializable {
     private String id;
     private String name;
     private String address;
 
-    public CustomerDTO() {
+    public Customer() {
     }
 
-    public CustomerDTO(String id, String name, String address) {
+    public Customer(String id, String name, String address) {
         this.id = id;
         this.name = name;
         this.address = address;

@@ -1,6 +1,7 @@
 package dao.custom;
 
-import model.ItemDTO;
+import dto.ItemDTO;
+import entity.Item;
 
-public interface ItemDAO extends CrudDAO<ItemDTO,String> {
+public interface ItemDAO extends CrudDAO<Item,String> {
 }

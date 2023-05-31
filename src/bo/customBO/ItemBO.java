@@ -1,7 +1,7 @@
 package bo.customBO;
 
 import bo.SuperBO;
-import model.ItemDTO;
+import dto.ItemDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,5 +20,4 @@ public interface ItemBO extends SuperBO {
 
      boolean deleteItem(String id) throws SQLException, ClassNotFoundException;
 
-     ItemDTO search(String id) throws SQLException, ClassNotFoundException ;
 }

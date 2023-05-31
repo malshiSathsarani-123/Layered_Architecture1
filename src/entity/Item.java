@@ -1,4 +1,4 @@
-package model;
+package entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,16 +8,16 @@ import java.math.BigDecimal;
  * @since : 0.1.0
  **/
 
-public class ItemDTO implements Serializable {
+public class Item implements Serializable {
     private String code;
     private String description;
     private BigDecimal unitPrice;
     private int qtyOnHand;
 
-    public ItemDTO() {
+    public Item() {
     }
 
-    public ItemDTO(String code, String description, BigDecimal unitPrice, int qtyOnHand) {
+    public Item(String code, String description, BigDecimal unitPrice, int qtyOnHand) {
         this.code = code;
         this.description = description;
         this.unitPrice = unitPrice;

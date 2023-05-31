@@ -5,11 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39eea0b4-d152-4ef5-a331-4501b7a9ed79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bo/BOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bo/SuperBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/SuperBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/OrderDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bo/customBO/CustomerBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/CustomerBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bo/customBO/ItemBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/ItemBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bo/customBO/PurchaseOrderBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/PurchaseOrderBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bo/customBO/impl/CustomerBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/impl/CustomerBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bo/customBO/impl/ItemBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/impl/ItemBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bo/customBO/impl/PurchaseOrderBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/customBO/impl/PurchaseOrderBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ManageCustomersFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageCustomersFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ManageItemsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ManageItemsFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PlaceOrderFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/QueryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/QueryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/CrudDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/CrudDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/ItemDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/OrderDetailDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/OrderDetailDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/impl/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/CustomerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/impl/ItemDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/ItemDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/impl/OrderDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/OrderDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/impl/OrderDetailsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/OrderDetailsDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/custom/impl/QueryDA0Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/custom/impl/QueryDA0Impl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/CustomerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/ItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OrderDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/OrderDetailDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/bo1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/bo1/custom/impl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/entity" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -55,6 +79,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\2nd semester\LayeredArchitecture\working\Layered-Project\Layered_Architecture\src\entity" />
       <recent name="G:\2nd semester\LayeredArchitecture\working\Layered-Project\Layered_Architecture\src\bo1\custom\impl" />
       <recent name="G:\2nd semester\LayeredArchitecture\working\Layered-Project\Layered_Architecture\src\bo1\custom" />
     </key>
@@ -88,7 +113,8 @@
       <workItem from="1685069162179" duration="13842000" />
       <workItem from="1685085729686" duration="11446000" />
       <workItem from="1685160942060" duration="117000" />
-      <workItem from="1685418340542" duration="5901000" />
+      <workItem from="1685418340542" duration="6253000" />
+      <workItem from="1685501911729" duration="12588000" />
     </task>
     <task id="LOCAL-00001" summary="Dependency Inject Successful.....">
       <created>1684904775752</created>
@@ -209,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685426843200</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="BOFactory is completed...">
+      <created>1685427496664</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685427496664</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +277,7 @@
     <MESSAGE value="..." />
     <MESSAGE value="Place Order Complete...01" />
     <MESSAGE value="DAOFactory is completed..." />
-    <option name="LAST_COMMIT_MESSAGE" value="DAOFactory is completed..." />
+    <MESSAGE value="BOFactory is completed..." />
+    <option name="LAST_COMMIT_MESSAGE" value="BOFactory is completed..." />
   </component>
 </project>

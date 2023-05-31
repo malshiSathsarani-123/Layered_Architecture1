@@ -1,7 +1,7 @@
 package bo.customBO;
 
 import bo.SuperBO;
-import model.CustomerDTO;
+import dto.CustomerDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,7 +19,4 @@ public interface CustomerBO extends SuperBO {
      String generateNewID() throws SQLException, ClassNotFoundException ;
 
      boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException;
-
-     CustomerDTO search(String id) throws SQLException, ClassNotFoundException ;
-
 }

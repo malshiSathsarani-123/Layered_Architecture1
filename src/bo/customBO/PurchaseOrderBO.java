@@ -1,19 +1,16 @@
 package bo.customBO;
 
 import bo.SuperBO;
-import model.CustomerDTO;
-import model.ItemDTO;
-import model.OrderDetailDTO;
+import dto.CustomerDTO;
+import dto.ItemDTO;
+import dto.OrderDTO;
 
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public interface PurchaseOrderBO extends SuperBO {
 
       CustomerDTO searchCustomer(String id) throws SQLException, ClassNotFoundException ;
-
 
       ItemDTO searchItem(String code) throws SQLException, ClassNotFoundException ;
 
@@ -27,5 +24,5 @@ public interface PurchaseOrderBO extends SuperBO {
 
       ArrayList<ItemDTO> getAllItems() throws SQLException, ClassNotFoundException ;
 
-     boolean saveOrder(String orderId, LocalDate orderDate, String customerId, List<OrderDetailDTO> orderDetails) ;
+      boolean purchaseOrder(OrderDTO dto)throws SQLException, ClassNotFoundException;
 }

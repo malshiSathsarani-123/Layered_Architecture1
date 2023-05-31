@@ -2,12 +2,10 @@ package controller;
 
 import bo.BOFactory;
 import bo.customBO.*;
-import bo.customBO.impl.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import dao.custom.OrderDAO;
-import dao.custom.impl.OrderDAOImpl;
+import dto.OrderDTO;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.event.ActionEvent;
@@ -20,16 +18,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import model.CustomerDTO;
-import model.ItemDTO;
-import model.OrderDTO;
+import dto.CustomerDTO;
+import dto.ItemDTO;
 import model.OrderDetailDTO;
 import view.tdm.OrderDetailTM;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -132,7 +128,6 @@ public class PlaceOrderFormController {
             }
         });
 
-
         cmbItemCode.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newItemCode) -> {
             txtQty.setEditable(newItemCode != null);
             btnSave.setDisable(newItemCode == null);
@@ -151,7 +146,6 @@ public class PlaceOrderFormController {
                     txtDescription.setText(item.getDescription());
                     txtUnitPrice.setText(item.getUnitPrice().setScale(2).toString());
 
-//                    txtQtyOnHand.setText(tblOrderDetails.getItems().stream().filter(detail-> detail.getCode().equals(item.getCode())).<Integer>map(detail-> item.getQtyOnHand() - detail.getQty()).findFirst().orElse(item.getQtyOnHand()) + "");
                     Optional<OrderDetailTM> optOrderDetail = tblOrderDetails.getItems().stream().filter(detail -> detail.getCode().equals(newItemCode)).findFirst();
                     txtQtyOnHand.setText((optOrderDetail.isPresent() ? item.getQtyOnHand() - optOrderDetail.get().getQty() : item.getQtyOnHand()) + "");
 
@@ -301,7 +295,7 @@ public class PlaceOrderFormController {
 
     public void txtQty_OnAction(ActionEvent actionEvent) {}
 
-    public void btnPlaceOrder_OnAction(ActionEvent actionEvent) {
+    public void btnPlaceOrder_OnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         boolean b = saveOrder(orderId, LocalDate.now(), cmbCustomerId.getValue(),
                 tblOrderDetails.getItems().stream().map(tm -> new OrderDetailDTO(orderId,tm.getCode(), tm.getQty(), tm.getUnitPrice())).collect(Collectors.toList()));
 
@@ -320,8 +314,9 @@ public class PlaceOrderFormController {
         calculateTotal();
     }
 
-    public boolean saveOrder(String orderId, LocalDate orderDate, String customerId, List<OrderDetailDTO> orderDetails) {
+    public boolean saveOrder(String orderId, LocalDate orderDate, String customerId, List<OrderDetailDTO> orderDetails) throws SQLException, ClassNotFoundException {
         /*Transaction*/
-        return purchaseOrderBO.saveOrder(orderId,orderDate,customerId,orderDetails);
+            OrderDTO orderDTO = new OrderDTO(orderId, orderDate, customerId, orderDetails);
+            return purchaseOrderBO.purchaseOrder(orderDTO);
     }
 }

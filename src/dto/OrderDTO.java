@@ -1,7 +1,10 @@
-package model;
+package dto;
+
+import model.OrderDetailDTO;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @author : Sanu Vithanage
@@ -15,21 +18,25 @@ public class OrderDTO {
     private String customerName;
     private BigDecimal orderTotal;
 
+    List<OrderDetailDTO> orderDetails;
+
     public OrderDTO() {
     }
 
-    public OrderDTO(String orderId, LocalDate orderDate, String customerId) {
+    public OrderDTO(String orderId, LocalDate orderDate, String customerId, List<OrderDetailDTO> orderDetails) {
         this.orderId = orderId;
         this.orderDate = orderDate;
         this.customerId = customerId;
+        this.orderDetails = orderDetails;
     }
 
-    public OrderDTO(String orderId, LocalDate orderDate, String customerId, String customerName, BigDecimal orderTotal) {
-        this.orderId = orderId;
-        this.orderDate = orderDate;
-        this.customerId = customerId;
-        this.customerName = customerName;
-        this.orderTotal = orderTotal;
+
+    public List<OrderDetailDTO> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetailDTO> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 
     public String getOrderId() {

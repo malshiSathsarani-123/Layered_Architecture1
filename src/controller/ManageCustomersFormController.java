@@ -2,7 +2,6 @@ package controller;
 
 import bo.BOFactory;
 import bo.customBO.CustomerBO;
-import bo.customBO.impl.CustomerBOImpl;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
@@ -17,7 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import model.CustomerDTO;
+import dto.CustomerDTO;
 import view.tdm.CustomerTM;
 
 import java.io.IOException;
@@ -48,6 +47,7 @@ public class ManageCustomersFormController {
     CustomerBO customerBO  = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
     public void initialize() {
+
         tblCustomers.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
         tblCustomers.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
         tblCustomers.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("address"));
